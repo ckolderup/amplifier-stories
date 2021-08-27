@@ -1,0 +1,18 @@
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: flex;
+  gap: 10px;
+  flex-direction: row;
+  align-items: center;
+}
+
+.thumbnail {
+  height: 48px;
+  width: auto;
+}

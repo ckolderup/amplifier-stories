@@ -1,0 +1,84 @@
+.story-container {
+  position: absolute;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+}
+
+/* lol */
+.story-container > div > div:nth-child(2) > div {
+  background-color: black;
+  overflow: hidden;
+  position: relative;
+  margin: auto;
+}
+
+.story-container > div:nth-child(2) > div:nth-child(2)  * {
+  height: inherit;
+}
+
+.play-story {
+  width: 175px;
+  height: 175px;
+  line-height: 175px;
+  margin: 20px auto;
+  padding: 10px;
+  border: 3px solid black;
+  border-radius: 15px;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  background-color: #fff;
+  -webkit-transition: background-color 0.5s ease;
+  -moz-transition: background-color 0.5s ease;
+  -o-transition: background-color 0.5s ease;
+  transition: background-color 0.5s ease;
+}
+
+.play-story.loading {
+  background-color: #333;
+}
+
+.play-story.error {
+  background-color: #911;
+}
+
+.story-page {
+  margin-top: 75px;
+}
+
+.story-content {
+  margin-top: 75px;
+}
+
+.throbber {
+  text-align: center;
+  font-size: 2rem;
+  color: #aaa;
+}
+
+.notes {
+  font-style: italic;
+  margin: 30px 30px;
+}
+
+.close {
+  background: none;
+  border: none;
+  position: absolute;
+  z-index: 1000;
+  top: 30px;
+  right: 10px;
+  opacity: 0.5;
+}
+
+h3 {
+  text-align: center;
+  text-decoration: underline;
+}
+
+.story-content ol {
+  list-style: none;
+  margin: 0px;
+  padding: 5px;
+}

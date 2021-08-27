@@ -1,0 +1,80 @@
+.App {
+  max-width: 800px;
+  margin: auto;
+}
+
+.nav h1 {
+  z-index: -1;
+  text-align: center;
+  padding: 0px 30px;
+  border-bottom: 2px solid #ccc;
+}
+
+.nav img {
+  width: 100%;
+}
+
+.nav a {
+  color: inherit;
+  text-decoration: 4px black underline;
+}
+
+ul.tiles {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  margin: 10px auto;
+  padding-left: inherit;
+  grid-gap: 0px;
+  justify-items: center;
+  align-items: center;
+  max-width: 600px;
+}
+
+.tile {
+  margin: 50px auto;
+  background-color: lavender;
+  width: 125px;
+  height: 125px;
+  border-radius: 15px;
+  text-align: center;
+  font-size: 18px;
+  display: grid;
+  text-decoration: none;
+  font-weight: bold;
+  color: black;
+}
+
+.day {
+  font-size: 3rem;
+}
+
+.footer {
+  border-top: 1px solid #ccc;
+}
+
+.playlists {
+  display: flex;
+  justify-content: center;
+  padding-left: 0px;
+}
+
+.playlists li {
+  display: inline-flex;
+}
+
+.playlists button {
+  border: none;
+  background-color: inherit;
+}
+
+.playlists img {
+  width: 48px;
+  height: auto;
+  display: inline;
+  z-index: 0;
+}
+
+.playlists img.chosen {
+  -webkit-filter: invert(58%) sepia(97%) saturate(319%) hue-rotate(162deg) brightness(89%) contrast(90%);
+  filter: invert(58%) sepia(97%) saturate(319%) hue-rotate(162deg) brightness(89%) contrast(90%);
+}
