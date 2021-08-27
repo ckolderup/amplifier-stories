@@ -32,7 +32,7 @@ ul.tiles {
 
 .tile {
   margin: 50px auto;
-  background-color: lavender;
+  background-color:#d9edf7;
   width: 125px;
   height: 125px;
   border-radius: 15px;
