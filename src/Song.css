@@ -4,15 +4,29 @@ a {
 }
 
 .container {
+  border-top: 1px solid #ccc;
   padding-top: 10px;
   padding-bottom: 10px;
-  display: flex;
+  display: grid;
   gap: 10px;
-  flex-direction: row;
+  margin-left: 20px;
+  grid-template: '48px 1fr';
+  justify-items: left;
+  justify-content: left;
   align-items: center;
 }
 
 .thumbnail {
   height: 48px;
   width: auto;
+  grid-row: 1 / span 2;
+}
+
+.artist {
+  grid-row: 2;
+  color: #888888;
+}
+
+.title {
+  grid-row: 1;
 }

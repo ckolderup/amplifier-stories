@@ -11,9 +11,12 @@ const Story = ({story, musicService}) => {
     <a href={story?.links?.[musicService]}>
       <div className='container'>
         <img className='thumbnail' src={story?.thumbnailUrl} />
-        <p>
-          {story?.artist || "Unknown"} - {story?.title || "Unknown"}
-        </p>
+        <div className='title'>
+          {story?.title || "Unknown"}
+        </div>
+        <div className='artist'>
+          {story?.artist || "Unknown"}
+        </div>
       </div>
     </a>
   );

@@ -34,10 +34,12 @@ export default function App() {
   return (
     <div className='App'>
       <Router>
-        <div className='nav'>
-          <Link to='/'>
-            <img src="/img/amplifier-wide.png" alt="Amplifier"/>
-          </Link>
+        <div className='header'>
+          <div className='header-inner'>
+            <Link to='/'>
+              <img src="/img/amplifier-wide.png" alt="Amplifier"/>
+            </Link>
+          </div>
         </div>
         <Switch>
           <Route
@@ -61,6 +63,7 @@ export default function App() {
         </Switch>
       </Router>
       <div className='footer'>
+        <h3>Open links with</h3>
         <ul className='playlists'>
           <li>
             <button onClick={() => updateMusicService("appleMusic")}>
@@ -90,6 +93,8 @@ export default function App() {
             </button>
           </li>
         </ul>
+        <hr/>
+        <p>A project by <a href="https://casey.kolderup.org">Casey Kolderup</a></p>
       </div>
     </div>
   );
