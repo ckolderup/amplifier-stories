@@ -94,7 +94,7 @@ export default function App() {
           </li>
         </ul>
         <hr/>
-        <p>A project by <a href="https://casey.kolderup.org">Casey Kolderup</a></p>
+        <p>A project by <a href="https://casey.kolderup.org">Casey Kolderup</a>. Sign up for email or subscribe to RSS on <a href="https://buttondown.email/amplifier">Buttondown</a>.</p>
       </div>
     </div>
   );
