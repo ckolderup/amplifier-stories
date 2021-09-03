@@ -27,9 +27,9 @@ const expandedData = await readFile(process.argv[2]).then(async f => {
           ...s,
           thumbnailUrl: thumbnailUrl,
           links: {
-            appleMusic: apiData.linksByPlatform?.appleMusic.url,
-            spotify: apiData.linksByPlatform?.spotify.url,
-            youtube: apiData.linksByPlatform?.youtube.url
+            appleMusic: apiData.linksByPlatform?.appleMusic?.url,
+            spotify: apiData.linksByPlatform?.spotify?.url,
+            youtube: apiData.linksByPlatform?.youtube?.url
           }
         }
       })
