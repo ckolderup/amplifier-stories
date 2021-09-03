@@ -1,0 +1,17 @@
+{
+  "background_color": "#4CAAD8",
+  "theme_color": "#4CAAD8",
+  "description": "Hosts collections of short videos about good music",
+  "display": "fullscreen",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "img/icon.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    }
+  ],
+  "name": "Amplifier",
+  "short_name": "Amplifier",
+  "start_url": "/index.html"
+}
