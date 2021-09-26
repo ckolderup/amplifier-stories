@@ -79,6 +79,8 @@ ul.tiles {
   padding-bottom: 50px;
   text-align: center;
   font-size: 12px;
+  margin-left: 40px;
+  margin-right: 40px;
 }
 
 .footer h3 {

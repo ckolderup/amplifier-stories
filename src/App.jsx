@@ -23,8 +23,10 @@ function Tile({date: dateString}) {
 }
 
 export default function App() {
-  // TODO: store service choice in localStorage
   const [musicService, setMusicService] = useState(localStorage.getItem('musicService') || 'spotify');
+
+  const today = new Date();
+  const dates = index.filter((yyyymmdd) => today.toISOString().slice(0,10) >= yyyymmdd);
 
   function updateMusicService(serviceName) {
     localStorage.setItem('musicService', serviceName);
@@ -37,7 +39,7 @@ export default function App() {
         <div className='header'>
           <div className='header-inner'>
             <Link to='/'>
-              <img src="/img/amplifier-wide.png" alt="Amplifier"/>
+              <img src='/img/amplifier-wide.png' alt='Amplifier' />
             </Link>
           </div>
         </div>
@@ -55,7 +57,7 @@ export default function App() {
           />
           <Route path='/'>
             <ul className='tiles'>
-              {index.map((date) => (
+              {dates.map((date) => (
                 <Tile key={date} date={date} />
               ))}
             </ul>
@@ -93,8 +95,12 @@ export default function App() {
             </button>
           </li>
         </ul>
-        <hr/>
-        <p>A project by <a href="https://casey.kolderup.org">Casey Kolderup</a>. Sign up for email or subscribe to RSS on <a href="https://buttondown.email/amplifier">Buttondown</a>.</p>
+        <hr />
+        <p>
+          By <a href='https://casey.kolderup.org'>Casey Kolderup</a> ▲ Get{" "}
+          <a href='https://buttondown.email/amplifier'>email/RSS</a> ▲ Send{" "}
+          <a href='mailto:casey@kolderup.org'>feedback</a>
+        </p>
       </div>
     </div>
   );
