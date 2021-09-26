@@ -7,9 +7,8 @@ const Story = ({story, musicService}) => {
     return (<></>)
   }
 
-  return (
-    <a href={story?.links?.[musicService]}>
-      <div className='container'>
+  const hasUrl = !!story?.links?.[musicService]
+  const container = <div className='container'>
         <img className='thumbnail' src={story?.thumbnailUrl} />
         <div className='title'>
           {story?.title || "Unknown"}
@@ -17,8 +16,14 @@ const Story = ({story, musicService}) => {
         <div className='artist'>
           {story?.artist || "Unknown"}
         </div>
-      </div>
-    </a>
+      </div>;
+
+  return (hasUrl ?
+      <a href={story?.links?.[musicService]}>
+        {container}
+      </a>
+    :
+      container
   );
 }
 

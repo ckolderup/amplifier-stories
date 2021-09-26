@@ -88,3 +88,15 @@ h3 {
   margin: 0px;
   padding: 5px;
 }
+
+.missing-warning {
+  width: 400px;
+  margin: auto;
+  text-align: center;
+  background-color: #fff3cd;
+  border: 2px solid #ffeeba;
+  padding: 5px;
+  color: #858404;
+  height: 50px;
+}
+

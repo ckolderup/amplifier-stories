@@ -80,61 +80,63 @@ export default function StoryFrame({date, musicService}) {
     }
   }, [])
 
-  return(
-      <div>
-        {playing ?
-          <div className="story-container">
-            <button className="close" onClick={finishStory}><XButton/></button>
-            <Stories
-              stories={stories}
-              width={size.width}
-              height={size.height}
-              keyboardNavigation
-              onAllStoriesEnd={finishStory}
-            />
+  const hasMissingUrls = stories.some((s) => !s.links[musicService].length);
+
+  return (
+    <div>
+      {playing ? (
+        <div className='story-container'>
+          <button className='close' onClick={finishStory}>
+            <XButton />
+          </button>
+          <Stories
+            stories={stories}
+            width={size.width}
+            height={size.height}
+            keyboardNavigation
+            onAllStoriesEnd={finishStory}
+          />
+        </div>
+      ) : (
+        <div className='story-page'>
+          <div
+            className={`play-story ${loading ? "loading" : ""} ${
+              loadingFailed ? "error" : ""
+            }`}
+            onClick={!loading && !loadingFailed ? startStory : undefined}
+          >
+            <PlayButton />
           </div>
-        :
-          <div className="story-page">
-            <div
-              className={`play-story ${loading ? 'loading' : ''} ${loadingFailed ? 'error' : ''}`}
-              onClick={ !loading && !loadingFailed ? startStory : undefined}
-            >
-              <PlayButton/>
-            </div>
-            <div className="story-content">
-              { loading && !loadingFailed && (
-                <div className="throbber">
-                  Loading...
+          <div className='story-content'>
+            {loading && !loadingFailed && (
+              <div className='throbber'>Loading...</div>
+            )}
+            {loadingFailed && <div className='throbber'>Failed to load</div>}
+            {!loading && !loadingFailed && (
+              <>
+                <div class='missing-warning' style={{ visibility: hasMissingUrls ? 'visible' : 'hidden'}}>
+                  Note: some of the songs below are not available on your
+                  selected music service. Sorry!
                 </div>
-              )}
-              { loadingFailed && (
-                <div className="throbber">
-                  Failed to load
-                </div>
-              )}
-              { !loading && !loadingFailed && (
-                <>
-                  <h3>Songs in this Story</h3>
-                  <ol>
-                    { stories.map((story) => (
-                      <li key={story.url}>
-                        <Song musicService={musicService} story={story} />
-                      </li>
-                    ))}
-                  </ol>
-                  {notes?.length > 0 && (
-                    <>
-                      <h3>Notes</h3>
-                      <div className="notes">
-                        {notes}
-                      </div>
-                    </>
-                  )}
-                </>
-              )}
-            </div>
+                <h3>Songs in this Story</h3>
+                <ol>
+                  {stories.map((story) => (
+                    <li key={story.url}>
+                      <Song musicService={musicService} story={story} />
+                    </li>
+                  ))}
+                </ol>
+                {notes?.length > 0 && (
+                  <>
+                    <h3>Notes</h3>
+                    <div className='notes'>{notes}</div>
+                  </>
+                )}
+              </>
+            )}
           </div>
-        }
-      </div>
+        </div>
+      )}
+    </div>
   );
 }
