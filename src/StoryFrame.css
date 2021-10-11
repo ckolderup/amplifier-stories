@@ -31,12 +31,45 @@
   text-transform: uppercase;
   font-weight: bold;
   background-color: #fff;
+  overflow: hidden;
+  position: relative;
 }
 
 .play-story svg {
-  -webkit-mask-image: linear-gradient(to bottom, rgba(76,170,216, 0), rgba(76,170,216, 1));
-  mask-image: linear-gradient(to bottom, rgba(76,170,216, 0), rgba(76,170,216, 1));
+  position: absolute;
+  z-index: 200;
+  -webkit-mask-image: linear-gradient(to bottom, rgba(76,170,216, 0.5), rgba(76,170,216, 1));
+  mask-image: linear-gradient(to bottom, rgba(76,170,216, 0.5), rgba(76,170,216, 1));
 }
+
+.play-story > div {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  position: absolute;
+  z-index: 100;
+  animation: slide 20s infinite;
+  opacity: 0;
+}
+
+@keyframes slide {
+  10% {
+    opacity: 1;
+  }
+  20% {
+    opacity: 1;
+  }
+  30% {
+    opacity: 0.5;
+  }
+  40% {
+    transform: scale(1.2);
+  }
+  60% {
+    opacity: 0;
+  }
+}
+
 /*
 .play-story.loading {
   background-color: #333;

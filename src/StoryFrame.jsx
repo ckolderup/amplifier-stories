@@ -105,6 +105,16 @@ export default function StoryFrame({date, musicService}) {
             }`}
             onClick={!loading && !loadingFailed ? startStory : undefined}
           >
+            {stories &&
+              stories.map((story, i) => (
+                <div
+                  key={story?.url}
+                  style={{
+                    backgroundImage: `url(${story?.thumbnailUrl})`,
+                    animationDelay: `${i * 5}s`,
+                  }}
+                ></div>
+              ))}
             <PlayButton />
           </div>
           <div className='story-content'>
@@ -114,7 +124,10 @@ export default function StoryFrame({date, musicService}) {
             {loadingFailed && <div className='throbber'>Failed to load</div>}
             {!loading && !loadingFailed && (
               <>
-                <div class='missing-warning' style={{ visibility: hasMissingUrls ? 'visible' : 'hidden'}}>
+                <div
+                  class='missing-warning'
+                  style={{ visibility: hasMissingUrls ? "visible" : "hidden" }}
+                >
                   Note: some of the songs below are not available on your
                   selected music service. Sorry!
                 </div>
