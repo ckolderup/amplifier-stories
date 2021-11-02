@@ -111,6 +111,7 @@ export default function StoryFrame({date, musicService}) {
                   key={story?.url}
                   style={{
                     backgroundImage: `url(${story?.thumbnailUrl})`,
+                    animation: `slide ${stories.length * 5}s infinite`,
                     animationDelay: `${i * 5}s`,
                   }}
                 ></div>

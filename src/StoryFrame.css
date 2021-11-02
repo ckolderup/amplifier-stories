@@ -48,7 +48,6 @@
   background-size: cover;
   position: absolute;
   z-index: 100;
-  animation: slide 20s infinite;
   opacity: 0;
 }
 
