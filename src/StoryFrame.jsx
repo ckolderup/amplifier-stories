@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactMarkdown from 'react-markdown';
 import { useHistory } from 'react-router-dom';
 import Stories from 'react-insta-stories';
 import Song from './Song'
@@ -142,7 +143,7 @@ export default function StoryFrame({date, musicService}) {
                 {notes?.length > 0 && (
                   <>
                     <h3>Notes</h3>
-                    <div className='notes'>{notes}</div>
+                    <div className='notes'><ReactMarkdown>{notes}</ReactMarkdown></div>
                   </>
                 )}
               </>
