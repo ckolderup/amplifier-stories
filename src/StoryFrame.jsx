@@ -67,7 +67,22 @@ export default function StoryFrame({date, musicService}) {
           }
         });
 
-      setNotes(data?.notes);
+
+      if (!!data?.notesFile) {
+        const notes = await fetch(data?.notesFile,
+          { headers: { 'Content-Type': 'text/plain',
+          'Accept': 'text/plain'}
+        }).then((res) =>
+          res.text()
+        ).catch((error) => {
+          console.log(error);
+          return ''
+        });
+        setNotes(notes);
+      } else if (!!data?.notes) {
+        setNotes(data?.notes);
+      }
+
       setStories(data.stories);
     }
 
